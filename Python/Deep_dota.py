@@ -11,9 +11,11 @@ from sklearn.model_selection import train_test_split
 # LOAD DATA
 data='allMatches.json'
 df=pd.read_json(data)
-df.radiant_win=df.radiant_win.astype(int)
+#print(df)
 
-# DATA HANDLING 
+
+# DATA HANDLING
+df.radiant_win=df.radiant_win.astype(int) 
 df=df.drop(columns=['duration','first_blood_time'])
 players=df['players'].map(lambda x: list(map(lambda y: y['hero_id'],x))) #players
 players=players.apply(pd.to_numeric)
@@ -49,7 +51,7 @@ players=players.apply(lambda x: embedding(x))
 X=np.asarray(players)
 y=np.asarray(df['radiant_win'])
 
-DROPOUT_RATE=0.5
+DROPOUT_RATE=0.2
 
 # NN MODEL
 model=keras.Sequential([    
