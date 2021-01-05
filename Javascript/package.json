@@ -3,7 +3,7 @@
     "dev": "nodemon --exec babel-node"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "axios-cache-adapter": "^2.3.0",
     "axios-concurrency": "^1.0.1",
     "micro": "^9.3.4",
